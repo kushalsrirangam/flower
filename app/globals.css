@@ -28,6 +28,7 @@
 html {
   background: var(--bg);
   scroll-behavior: auto;
+  overflow-x: hidden;
 }
 
 body {
@@ -36,6 +37,7 @@ body {
   font-family: var(--font-montserrat), sans-serif;
   overflow-x: hidden;
   cursor: none;
+  width: 100%;
 }
 
 body::before {
@@ -331,4 +333,219 @@ body::before {
 }
 [data-glass-strip] > div {
   background: linear-gradient(135deg, rgba(255,255,255,0.035), rgba(255,255,255,0));
+}
+
+@media (max-width: 900px) {
+  body {
+    cursor: auto;
+  }
+
+  #c-outer,
+  #c-dot,
+  .c-petal {
+    display: none !important;
+  }
+
+  .nav-root {
+    padding: 1rem 1.15rem !important;
+    min-height: 72px;
+  }
+
+  .nav-root a {
+    gap: 0.65rem !important;
+  }
+
+  .nav-root a span {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.18em !important;
+    max-width: 11rem;
+    line-height: 1.25;
+  }
+
+  .nav-root svg {
+    width: 26px !important;
+    height: 26px !important;
+    flex: 0 0 auto;
+  }
+
+  .nav-root ul {
+    display: none !important;
+  }
+
+  .nav-root > button {
+    display: block !important;
+    flex: 0 0 auto;
+  }
+
+  .hero-section {
+    min-height: auto !important;
+    padding: 8.8rem 1.15rem 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+  }
+
+  .hero-grid {
+    background-size: 54px 54px !important;
+    opacity: 0.65;
+  }
+
+  .hero-corner {
+    top: 6.2rem !important;
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .hero-corner-left {
+    left: 1.15rem !important;
+  }
+
+  .hero-corner-right {
+    right: 1.15rem !important;
+  }
+
+  .hero-copy {
+    padding-top: 28vh;
+  }
+
+  .hero-kicker {
+    font-size: 0.46rem !important;
+    letter-spacing: 0.24em !important;
+    gap: 0.55rem !important;
+    margin-bottom: 1.1rem !important;
+    max-width: 18rem;
+    line-height: 1.9;
+  }
+
+  .hero-kicker span {
+    width: 14px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(3.7rem, 18vw, 5.6rem) !important;
+    line-height: 0.86 !important;
+    letter-spacing: 0 !important;
+    max-width: 100%;
+  }
+
+  .hero-side {
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    max-width: none !important;
+    text-align: left !important;
+    margin-top: 1.3rem !important;
+    opacity: 1 !important;
+  }
+
+  .hero-side p {
+    font-size: 0.78rem !important;
+    line-height: 1.8 !important;
+    margin-bottom: 1.2rem !important;
+    max-width: 24rem;
+  }
+
+  .hero-actions {
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+  }
+
+  .hero-actions button {
+    width: 100% !important;
+    max-width: 22rem;
+    padding: 0.92rem 1rem !important;
+    font-size: 0.54rem !important;
+    letter-spacing: 0.17em !important;
+  }
+
+  .hero-stats {
+    position: relative !important;
+    margin: 2rem -1.15rem 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    border-top: 0.5px solid rgba(201,168,64,0.14) !important;
+  }
+
+  .hero-stats > div {
+    padding: 1rem 0.95rem !important;
+    gap: 0.65rem !important;
+    min-width: 0;
+    border-right: 0.5px solid rgba(201,168,64,0.09) !important;
+    border-bottom: 0.5px solid rgba(201,168,64,0.09);
+    opacity: 1 !important;
+  }
+
+  .hero-stats > div > span {
+    font-size: 1rem !important;
+  }
+
+  .hero-stats > div div div:first-child {
+    font-size: 1.45rem !important;
+  }
+
+  .hero-stats > div div div:last-child {
+    font-size: 0.42rem !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  .hero-scroll {
+    display: none !important;
+  }
+
+  #about,
+  #products,
+  #why-us,
+  #contact {
+    padding: 5.5rem 1.15rem !important;
+    overflow-x: hidden;
+  }
+
+  #about > div:nth-of-type(2),
+  #contact > div:nth-of-type(2) {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  #about [style*="grid-template-columns: 1fr 1fr"],
+  #contact [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  #products [style*="repeat(auto-fit"],
+  #products [style*="repeat(auto-fill"],
+  #why-us [style*="repeat(auto-fit"],
+  #why-us [style*="repeat(auto-fill"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .s-eye {
+    font-size: 0.47rem !important;
+    letter-spacing: 0.25em !important;
+  }
+
+  .s-ttl {
+    font-size: clamp(2.35rem, 14vw, 4rem) !important;
+    line-height: 1.02 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-copy {
+    padding-top: 21vh;
+  }
+
+  .hero-title {
+    font-size: clamp(3.05rem, 17vw, 4.35rem) !important;
+    line-height: 0.9 !important;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .liquid-button {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.28),
+      0 12px 30px rgba(0,0,0,0.2),
+      0 0 22px rgba(201,168,64,0.16) !important;
+  }
 }

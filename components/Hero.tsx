@@ -47,7 +47,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="hero" style={{
+    <section id="hero" className="hero-section" style={{
       position: 'relative',
       minHeight: '100vh',
       display: 'flex',
@@ -57,7 +57,7 @@ export default function Hero() {
     }}>
 
       {/* Subtle grid overlay */}
-      <div style={{
+      <div className="hero-grid" style={{
         position: 'absolute', inset: 0, zIndex: 0,
         backgroundImage: `
           linear-gradient(rgba(201,168,64,0.025) 1px, transparent 1px),
@@ -68,14 +68,14 @@ export default function Hero() {
       }} />
 
       {/* Corner accent TL */}
-      <div style={{
+      <div className="hero-corner hero-corner-left" style={{
         position: 'absolute', top: '5rem', left: '3.5rem',
         width: 40, height: 40,
         borderTop: '0.5px solid rgba(201,168,64,0.35)',
         borderLeft: '0.5px solid rgba(201,168,64,0.35)',
       }} />
       {/* Corner accent TR */}
-      <div style={{
+      <div className="hero-corner hero-corner-right" style={{
         position: 'absolute', top: '5rem', right: '3.5rem',
         width: 40, height: 40,
         borderTop: '0.5px solid rgba(201,168,64,0.35)',
@@ -83,8 +83,8 @@ export default function Hero() {
       }} />
 
       {/* Left: tag + mega title */}
-      <div style={{ position: 'relative', zIndex: 2 }}>
-        <p ref={tagRef} style={{
+      <div className="hero-copy" style={{ position: 'relative', zIndex: 2 }}>
+        <p ref={tagRef} className="hero-kicker" style={{
           fontSize: '0.52rem', letterSpacing: '0.5em', textTransform: 'uppercase',
           color: 'var(--gold)', marginBottom: '2rem', opacity: 0,
           textShadow: '0 0 18px rgba(201,168,64,0.5)',
@@ -95,7 +95,7 @@ export default function Hero() {
           <span style={{ display: 'inline-block', width: 20, height: '0.5px', background: 'rgba(201,168,64,0.6)' }} />
         </p>
 
-        <h1 ref={titleRef} style={{
+        <h1 ref={titleRef} className="hero-title" style={{
           fontFamily: 'var(--font-cormorant)', fontWeight: 200,
           fontSize: 'clamp(5rem, 14vw, 13rem)',
           lineHeight: 0.88, letterSpacing: '-0.03em',
@@ -120,7 +120,7 @@ export default function Hero() {
       </div>
 
       {/* Right: description + CTAs */}
-      <div ref={rightRef} style={{
+      <div ref={rightRef} className="hero-side" style={{
         position: 'absolute', right: '3.5rem', bottom: '5.5rem',
         maxWidth: 340, textAlign: 'right', zIndex: 2, opacity: 0,
       }}>
@@ -131,7 +131,7 @@ export default function Hero() {
           Connecting the world's finest flower farms to American businesses.
           Fresh. Cold-chain. Wholesale-direct.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+        <div className="hero-actions" style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
           <button
             className="liquid-button primary"
             onClick={() => window.dispatchEvent(new CustomEvent('navScroll', { detail: '#products' }))}
@@ -177,7 +177,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom stat strip */}
-      <div ref={stripRef} data-glass-strip style={{
+      <div ref={stripRef} className="hero-stats" data-glass-strip style={{
         position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 2,
         display: 'flex',
         borderTop: '0.5px solid rgba(201,168,64,0.09)',
@@ -217,7 +217,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div style={{
+      <div className="hero-scroll" style={{
         position: 'absolute', right: '3.5rem', top: '50%',
         transform: 'translateY(-50%)',
         display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.6rem',

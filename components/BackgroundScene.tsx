@@ -154,6 +154,7 @@ function HeroBloom({
 
 function FloralHeroGarden() {
   const gardenRef = useRef<any>(null)
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 700
 
   useFrame(({ clock }) => {
     if (!gardenRef.current) return
@@ -163,11 +164,11 @@ function FloralHeroGarden() {
 
   return (
     <group ref={gardenRef}>
-      <HeroBloom position={[-3.7, 1.15, -3.1]} scale={1.55} color={FLOWER_COLORS[0]} spin={1.1} />
-      <HeroBloom position={[3.65, 1.5, -3.5]} scale={1.25} color={FLOWER_COLORS[3]} spin={-1} />
-      <HeroBloom position={[2.3, -1.05, -2.7]} scale={1.05} color={FLOWER_COLORS[5]} chry spin={1.2} />
-      <HeroBloom position={[-2.25, -1.3, -2.9]} scale={1.02} color={FLOWER_COLORS[2]} spin={-0.8} />
-      <HeroBloom position={[0.25, 1.95, -4.1]} scale={0.82} color={FLOWER_COLORS[1]} spin={1.4} />
+      <HeroBloom position={isMobile ? [-3.15, 1.55, -3.6] : [-3.7, 1.15, -3.1]} scale={isMobile ? 0.92 : 1.55} color={FLOWER_COLORS[0]} spin={1.1} />
+      <HeroBloom position={isMobile ? [3.05, 1.35, -3.8] : [3.65, 1.5, -3.5]} scale={isMobile ? 0.82 : 1.25} color={FLOWER_COLORS[3]} spin={-1} />
+      <HeroBloom position={isMobile ? [2.7, -1.0, -3.4] : [2.3, -1.05, -2.7]} scale={isMobile ? 0.7 : 1.05} color={FLOWER_COLORS[5]} chry spin={1.2} />
+      <HeroBloom position={isMobile ? [-3.05, -1.25, -3.4] : [-2.25, -1.3, -2.9]} scale={isMobile ? 0.72 : 1.02} color={FLOWER_COLORS[2]} spin={-0.8} />
+      <HeroBloom position={isMobile ? [0.2, 1.85, -4.5] : [0.25, 1.95, -4.1]} scale={isMobile ? 0.68 : 0.82} color={FLOWER_COLORS[1]} spin={1.4} />
     </group>
   )
 }
